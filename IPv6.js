@@ -4,7 +4,7 @@
  * @return {*} (ipv6Address) - An IPv6 address string or null if a run-time problem was detected.
  */
 function getIpv4MappedIpv6Address(ipv4) {
-module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
+
   // Initialize return argument
   let ipv6Address = null;
 
@@ -13,7 +13,7 @@ module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
   let ipv4Quads = ipv4.split('.');
   // Count the number of parts found.
   let numIpv4Segments = ipv4Quads.length;
-
+  module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
   // Verify IPv4 had four parts.
   if (numIpv4Segments === 4) {
     let validQuads = true;
