@@ -97,6 +97,10 @@ function getIpv4MappedIpv6Address(ipv4) {
   This section is used to test function and log any errors.
   We will make several positive and negative tests.
 */
+/*
+  This section is used to test function and log any errors.
+  We will make several positive and negative tests.
+*/
 function main() {
   // Create some test data for getFirstIpAddress(), both valid and invalid.
   let sampleCidrs = ['172.16.10.0/24', '172.16.10.0 255.255.255.0', '172.16.10.128/25', '192.168.1.216/30'];
@@ -110,13 +114,13 @@ function main() {
     console.log(`\n--- Test Number ${i + 1} getFirstIpAddress(${sampleCidrs[i]}) ---`);
     // Call getFirstIpAddress and pass the test subnet and an anonymous callback function.
     // The callback is using the fat arrow operator: () => { }
-    getFirstIpAddress(sampleCidrs[i], (IPV4data, IPV6data, error) => {
+    getFirstIpAddress(sampleCidrs[i], (data, error) => {
       // Now we are inside the callback function.
       // Display the results on the console.
       if (error) {
         console.error(`  Error returned from GET request: ${error}`);
       }
-      console.log(`  Response returned from GET request: {"ipv4:" "${IPV4data}", "ipv6:" "${IPV6data}"}`);
+      console.log(`  Response returned from GET request: ${data}`);
     });
   }
   // Iterate over sampleIpv4s and pass the element's value to getIpv4MappedIpv6Address().
@@ -131,7 +135,6 @@ function main() {
     }
   }
 }
-
 /*
   Call main to run it.
 */
