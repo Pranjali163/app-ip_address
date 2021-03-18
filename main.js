@@ -1,3 +1,4 @@
+module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
 /*
   Import the built-in path module.
   See https://nodejs.org/api/path.html
